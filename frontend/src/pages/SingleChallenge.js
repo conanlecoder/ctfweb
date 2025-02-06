@@ -14,7 +14,7 @@ const SingleChallenge = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/chall/getChall/" + challid)
+      .get("http://68.183.75.21:3000/api/chall/getChall/" + challid)
       .then((res) => (setData(res.data.data)))
   }, []);
 
@@ -22,7 +22,7 @@ const SingleChallenge = () => {
     event.preventDefault();
     axios({
       method: "post",
-      url: "http://localhost:3000/api/chall/verify/" + challid,
+      url: "http://68.183.75.21:3000/api/chall/verify/" + challid,
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem('token')
